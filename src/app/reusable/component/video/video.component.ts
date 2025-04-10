@@ -19,9 +19,25 @@ export class VideoComponent implements AfterViewInit{
   @ViewChild('contact') contact!: ElementRef
   @ViewChild('play') play!: ElementRef
   @ViewChild('barre') barre!: ElementRef
-  // @ViewChild('angular') angular!: ElementRef
+  @ViewChild('projet1') projet1!: ElementRef
+  @ViewChild('projet2') projet2!: ElementRef
+  @ViewChild('projet3') projet3!: ElementRef
   @ViewChild('contactTitle') contactTitle!: ElementRef
   @ViewChild('tech') techBtn!: ElementRef
+
+  animProjetNumber(card:ElementRef){
+    gsap.to(card.nativeElement, {
+      rotateX:0,
+      duration:2,
+    scrollTrigger: {
+      trigger: card.nativeElement,
+      start: 'left center',
+      end: 'right 0%',
+      scrub: 1,
+      markers:true
+    }
+    });
+  }
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       // scroll horizontale element
@@ -113,7 +129,10 @@ export class VideoComponent implements AfterViewInit{
         scrub: 1,
       }
       });
-
+     
+      this.animProjetNumber(this.projet1)
+      this.animProjetNumber(this.projet2)
+      this.animProjetNumber(this.projet3)
 
     }
   }

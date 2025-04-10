@@ -51,10 +51,7 @@ li{
     height: 100vh;
   }
   
-  .social-media{
-    a{
-        svg{
-        }
-    }
+.projet{
+  transform: perspective(200px) rotateX(180deg);
 }
 
