@@ -24,24 +24,25 @@ export class VideoComponent implements AfterViewInit{
   @ViewChild('projet3') projet3!: ElementRef
   @ViewChild('contactTitle') contactTitle!: ElementRef
   @ViewChild('tech') techBtn!: ElementRef
-
-  animProjetNumber(card:ElementRef){
+  animProjetNumber(card:ElementRef, container:any){
     gsap.to(card.nativeElement, {
       rotateX:0,
       duration:2,
     scrollTrigger: {
+      id:"pro",
       trigger: card.nativeElement,
-      start: 'left center',
-      end: 'right 0%',
+      start: 'left 60%',
+      end: 'left 40%',
       scrub: 1,
-      markers:true
+      horizontal:true,
+      containerAnimation:container
     }
     });
   }
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       // scroll horizontale element
-      let container = document.querySelector('.tech-container')
+      var container = document.querySelector('.tech-container')
       let sections = document.querySelectorAll('.tech-section')
       const width = 100 * sections.length + 'vw';
       this.renderer.setStyle(container, "width", width)
@@ -97,7 +98,7 @@ export class VideoComponent implements AfterViewInit{
       });
    
       
-      gsap.to(sections, {
+ const horizontalTween  =  gsap.to(sections, {
         xPercent: -100*(sections.length - 1),
         ease:"none",
         scrollTrigger:{
@@ -105,6 +106,7 @@ export class VideoComponent implements AfterViewInit{
           pin:true,
           scrub:1,
           end:"+=3500",
+
         }
       });
 
@@ -129,10 +131,19 @@ export class VideoComponent implements AfterViewInit{
         scrub: 1,
       }
       });
+      gsap.to(this.projet1.nativeElement, {
+        rotateX:0,
+        duration:2,
+      scrollTrigger: {
+        trigger: this.projet1.nativeElement,
+        start: 'top center',
+        end: 'top 20%',
+        scrub: 1,
+      }
+      });
      
-      this.animProjetNumber(this.projet1)
-      this.animProjetNumber(this.projet2)
-      this.animProjetNumber(this.projet3)
+      this.animProjetNumber(this.projet2,horizontalTween)
+      this.animProjetNumber(this.projet3,horizontalTween)
 
     }
   }
