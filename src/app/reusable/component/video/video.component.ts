@@ -39,6 +39,8 @@ export class VideoComponent implements AfterViewInit{
       gsap.to(this.play.nativeElement, {
         opacity:0,
         duration: 2,
+        scale:4,
+        rotate:'360deg',
         scrollTrigger:{
           trigger: '.section2',
           scrub:1 ,

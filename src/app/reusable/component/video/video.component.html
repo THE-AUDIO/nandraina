@@ -1,22 +1,21 @@
 
 <body class="w-full h-[200dvh] bg-primary relative"> 
-    <!-- <span class="absolute h-2 w-full bg-secondary batton"></span>
-    <span class="absolute h-2 w-full bg-secondary batton"></span>
-    <span class="absolute h-2 w-full bg-secondary batton"></span> -->
+   
     <!-- section du video -->
     <section class="container_video w-full h-screen flex justify-center items-center relative bg-primary">
-            <div #video class=" shadow-sm w-20 h-16 rounded-xl flex justify-center items-center fixed z-10 overflow-hidden p-0 m-0">
+            <div #video class="shadow-sm w-20 h-16 rounded-xl flex justify-center items-center fixed z-10 overflow-hidden p-0 m-0">
                <div class="relative w-full h-full flex justify-center items-center overflow-hidden">
                     <span #play class="w-20 h-16 z-10 flex justify-center items-center bg-secondary opacity-100 rounded-xl">
                         <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46"  class="bi bi-play-fill fill-primary play" viewBox="0 0 16 16">
                             <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
                         </svg> 
                     </span>
-                    <video src="assets/video/video1.mp4" autoplay="true" loop muted="true" class="absolute z-0 w-full h-full object-cover"></video> 
+                    <!-- <video src="assets/video/video1.mp4"  autoplay="true" loop muted="true" class="absolute z-0 w-full h-full object-cover"></video>  -->
+                     <img src="assets/image/code.png" alt="coding life" class="absolute z-0 w-full h-full object-cover object-center opacity-50">
                </div>
             </div> 
 
-            <div #barre class="barre bg-secondary h-[6vh] w-1/3 rounded-2xl fixed top-2 z-50">
+            <div #barre class="barre bg-secondary h-[6vh] w-1/3 rounded-2xl fixed bottom-2 z-50">
                     <ul class="flex justify-between items-center w-full h-full px-4 text-tertiary">
                         <li>
                             <span>
@@ -69,19 +68,27 @@
     </div>
     <div class="w-full h-screen section3">
     </div>
-    <section class="angular h-screen w-full relative z-50 flex justify-center items-center">
-        <div class="h-1/2 w-full flex justify-center items-center overflow-hidden">
+
+    <!-- angular -->
+    <section class="angular h-screen w-full relative z-40 flex justify-center items-center">
+        <div class="h-full w-full flex justify-center items-start overflow-hidden">
+             <div class="w-1/2 h-48 rounded-xl flex justify-center items-center bg-primary">
+                    <h2 class="text-[4rem] text-tertiary font-bold major">+50 Repository</h2>
+             </div>
              <img #angular class="w-5/6 h-[30rem] fixed  top-1/4 opacity-100 -translate-x-[120%]" src="assets/image/angular_wordmark_gradient.png" alt="angular_wordmark_gradient">
         </div>
     </section> 
+
+    <!-- spring boot  -->
     <section class="spring h-screen w-full relative z-50 flex justify-center items-center">
-        <div class="h-1/2 w-full flex justify-center items-center overflow-hidden">
-             <img #spring class="w-5/6 h-[30rem] fixed  top-1/4 opacity-100 -translate-x-[120%]" src="assets/image/angular_wordmark_gradient.png" alt="angular_wordmark_gradient">
+        <div class="h-full w-full flex justify-center items-start overflow-hidden">
+             <img #spring class="w-5/6 h-[30rem] fixed  top-1/4 opacity-100 -translate-x-[120%]" src="assets/image/spring.png" alt="angular_wordmark_gradient">
         </div>
     </section>
+
+
     <!-- element à defiler pour l'animation du video -->
-    <section #image class="section_hidden w-full h-screen z-50 bg-primary relative flex justify-center items-center">
-         
+    <section #image class="section_hidden w-full h-screen z-50 bg-primary relative flex justify-center items-center">  
         <h2 #contact class="text-[10rem] font-bold text-secondary text-center major"> Mes contactes </h2>
     </section>
     <!-- <section class="h-screen w-full relative z-50 bg-primary">
