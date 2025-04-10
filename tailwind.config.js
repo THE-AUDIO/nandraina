@@ -4,9 +4,9 @@
   theme: {
     extend: {
       colors:{
-        "primary":"#1A1A40",
+        "primary":"#171719",
         "secondary":"#f46609",
-        "tertiary":"#f9fafb",
+        "tertiary":"#FFFFFF4D",
       }
     },
   },

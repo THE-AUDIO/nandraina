@@ -1,25 +1,25 @@
 
-<body class="w-full h-[200dvh] bg-primary relative"> 
+<body class="w-full bg-primary relative overflow-x-hidden"> 
    
     <!-- section du video -->
     <section class="container_video w-full h-screen flex justify-center items-center relative bg-primary">
-            <div #video class="shadow-sm w-20 h-16 rounded-xl flex justify-center items-center fixed z-10 overflow-hidden p-0 m-0">
+            <div #video class="shadow-sm w-full h-0 rounded-xl flex justify-center items-center fixed z-10 overflow-hidden p-0 m-0 opacity-0 bg-primary">
                <div class="relative w-full h-full flex justify-center items-center overflow-hidden">
-                    <span #play class="w-20 h-16 z-10 flex justify-center items-center bg-secondary opacity-100 rounded-xl">
+                    <span #play class="w-20 h-16 z-10 flex justify-center items-center bg-secondary opacity-0 rounded-xl">
                         <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46"  class="bi bi-play-fill fill-primary play" viewBox="0 0 16 16">
                             <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
                         </svg> 
                     </span>
                     <!-- <video src="assets/video/video1.mp4"  autoplay="true" loop muted="true" class="absolute z-0 w-full h-full object-cover"></video>  -->
-                     <img src="assets/image/code.png" alt="coding life" class="absolute z-0 w-full h-full object-cover object-center opacity-50">
+                     <img src="assets/image/Floating Cubes Abstract.jpeg" alt="coding life" class="absolute z-0 w-full h-full object-cover object-center opacity-50">
                </div>
             </div> 
 
-            <div #barre class="barre bg-secondary h-[6vh] w-1/3 rounded-2xl fixed bottom-2 z-50">
-                    <ul class="flex justify-between items-center w-full h-full px-4 text-tertiary">
+            <div #barre class="barre bg-tertiary h-[6vh] w-1/3 rounded-2xl fixed bottom-8 z-50">
+                    <ul class="flex justify-between items-center w-full h-full px-4 text-primary">
                         <li>
                             <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-house-fill fill-tertiary" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-house-fill fill-primary" viewBox="0 0 16 16">
                                     <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
                                     <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
                                 </svg>
@@ -28,7 +28,7 @@
                         </li>
                         <li #tech>
                             <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-gear fill-tertiary" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-gear fill-primary" viewBox="0 0 16 16">
                                     <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
                                     <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
                                 </svg>
@@ -37,7 +37,7 @@
                         </li>
                         <li>
                             <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-person-lines-fill fill-tertiary" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-person-lines-fill fill-primary" viewBox="0 0 16 16">
                                     <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/>
                                 </svg>
                             </span> 
@@ -47,18 +47,25 @@
                       
                     </ul>
             </div>
-            <div class="presatation flex justify-center items-center flex-col h-full w-full relative">
+            <div class="presatation flex justify-start items-center flex-col h-full w-full fixed z-0">
                   <div class="h-max ">
                     <h1 class="text-[5rem] font-bold text-gray-50 major">The Audio Nandraina</h1>
                   </div>
-                  <div class="h-2/3 w-full rounded-2xl overflow-hidden flex justify-around items-center z-0 p-4 mt-8">
+                  <div class="h-[70%] w-full rounded-2xl overflow-hidden flex justify-around items-center z-0 p-4 mt-8">
                         <div class="w-[45%] h-5/6 text-gray-50 flex justify-between items-start flex-col major">
                             <h2 class="text-4xl"> DEVELOPPEUR ANGULAR/SPRING-BOOT </h2>
-                            <p class="text-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim animi quos, quibusdam facilis ea aspernatur molestias ullam doloremque aliquam, impedit autem eos quae accusamus ab, cum minima expedita? Quibusdam laudantium ipsum impedit error sed! Vel enim, commodi nemo dicta tempora quos animi odit, quis mollitia officiis ducimus repudiandae doloribus. Perferendis placeat iste accusantium earum illo? Illo labore necessitatibus, dignissimos atque iure mollitia eveniet debitis voluptate facere sint ipsa corrupti blanditiis in numquam iusto. Inventore, nam impedit ipsa voluptate odit perferendis!</p>
-                            <button class="bg-secondary text-primary font-bold h-[5vh] w-1/2  rounded-xl text-xl">Telecharger mon cv</button>
+                            <p class="text-lg">
+                                Développeur web passionné, je me décris comme un éternel apprenant en quête de défis et d'innovation. Curieux et créatif, j'explore le web moderne avec enthousiasme.
+
+                                Mon objectif ? Créer des expériences numériques uniques, accessibles et percutantes.
+                                
+                                🎯 Aujourd'hui, je me perfectionne dans les animations web et l’intégration soignée.                                
+                                Si vous cherchez un esprit créatif, autonome, et toujours prêt à apprendre, parlons-en !
+                            </p>
+                            <button class="shadow-sm shadow-tertiary font-bold h-[6vh] w-1/2  rounded-xl text-xl text-tertiary">Telecharger mon cv</button>
                         </div>
-                        <div class="w-[45%] h-5/6 shadow-sm rounded-xl overflow-hidden">
-                            <img src="assets/image/bg.jpeg" class="w-full h-full object-cover" alt="une femme dans un voiture vert">
+                        <div class="container-image w-[45%] h-5/6 shadow-sm rounded-xl overflow-hidden">
+                            <img src="assets/image/bg.jpeg" class="w-full h-full object-cover" alt="laptop with code">
                         </div>
                   </div>
             </div>
@@ -69,28 +76,75 @@
     <div class="w-full h-screen section3">
     </div>
 
-    <!-- angular -->
-    <section class="angular h-screen w-full relative z-40 flex justify-center items-center">
-        <div class="h-full w-full flex justify-center items-start overflow-hidden">
-             <div class="w-1/2 h-48 rounded-xl flex justify-center items-center bg-primary">
-                    <h2 class="text-[4rem] text-tertiary font-bold major">+50 Repository</h2>
-             </div>
-             <img #angular class="w-5/6 h-[30rem] fixed  top-1/4 opacity-100 -translate-x-[120%]" src="assets/image/angular_wordmark_gradient.png" alt="angular_wordmark_gradient">
-        </div>
-    </section> 
-
-    <!-- spring boot  -->
-    <section class="spring h-screen w-full relative z-50 flex justify-center items-center">
-        <div class="h-full w-full flex justify-center items-start overflow-hidden">
-             <img #spring class="w-5/6 h-[30rem] fixed  top-1/4 opacity-100 -translate-x-[120%]" src="assets/image/spring.png" alt="angular_wordmark_gradient">
-        </div>
-    </section>
-
-
+    <div class="tech-container relative z-50 major font-bold">
+        <section  class="tech-section angular relative  flex justify-center items-center flex-col">
+                <div class="h-2/3 w-5/6 bg-tertiary text-primary flex justify-center items-center rounded-lg relative">
+                    <div class="w-40 h-40 absolute top-4 left-4 shadow-xl shadow-primary rounded-lg flex justify-center items-center">
+                        <h2 class="text-[6rem] projet1">
+                            01
+                        </h2>
+                    </div>
+                </div>
+        </section> 
+    
+        <!-- spring boot  -->
+        <section  class="tech-section spring relative z-50 flex justify-center items-center">
+            <div class="h-2/3 w-5/6 bg-tertiary text-primary flex justify-center items-center rounded-lg relative">
+                <div class="w-40 h-40 absolute top-4 left-4 shadow-xl shadow-primary rounded-lg flex justify-center items-center">
+                    <h2 class="text-[6rem] projet2">
+                        02
+                    </h2>
+                </div>
+            </div>
+        </section>
+        <!-- tailwindcss.png -->
+        <section  class="tech-section spring relative z-50 flex justify-center items-center">
+            <div class="h-2/3 w-5/6 bg-tertiary text-primary flex justify-center items-center rounded-lg relative">
+                <div class="w-40 h-40 absolute top-4 left-4 shadow-xl shadow-primary rounded-lg flex justify-center items-center">
+                    <h2 class="text-[6rem] projet3">
+                        03
+                    </h2>
+                </div>
+            </div>
+        </section>
+    </div>
     <!-- element à defiler pour l'animation du video -->
-    <section #image class="section_hidden w-full h-screen z-50 bg-primary relative flex justify-center items-center">  
-        <h2 #contact class="text-[10rem] font-bold text-secondary text-center major"> Mes contactes </h2>
+    <section #contact class="section_hidden w-full h-screen z-50 bg-primary relative flex justify-around items-center flex-col">  
+        <h2 #contactTitle class="text-[8rem] font-bold text-tertiary text-center major"> Mes contactes </h2>
+        <div class=" flex justify-between items-center h-1/2 w-full">
+            <div class="w-1/3 p-4 h-full flex justify-start items-start flex-col">
+               <h2 class="text-secondary text-[3rem] major">The</h2>
+               <h3 class="text-secondary text-[3rem] major">Audio <br> Nandraina</h3>
+            </div>
+            <div class="w-1/3 h-full p-4 flex justify-start items-start flex-col">
+                <h2 class="text-secondary text-[2rem] major">Mes page </h2>
+                <div class="flex justify-around items-start flex-col text-tertiary text-lg h-1/2 major  ">
+                    <a href="#" class="underline">Home</a>
+                    <a href="#" class="underline">Technology</a>    
+                    <a href="#" class="underline">Contact</a>
+                </div>
+                
+            </div>
+            <div class="w-1/3 h-full p-4 flex justify-start items-start flex-col">
+                <h2 class="text-secondary text-[2rem] major">Réseaux sociaux </h2>
+                <div class="flex justify-around items-start flex-col text-tertiary text-lg major h-1/2">
+                    <a href="#" class="underline">LinkedIn</a>
+                    <a href="#" class="underline">Facebook</a>    
+                    <a href="#" class="underline">Instagram</a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="border-t-[1px] text-tertiary text-sm w-5/6 flex justify-around items-center h-[5vh] major">
+            <p>Copyriht &copy; The audio Nandraina</p>
+            <a class="flex justify-center items-center">
+                Retourne en haut
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-square" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.5 9.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+                </svg>
+            </a>
+            
+        </div>
     </section>
-    <!-- <section class="h-screen w-full relative z-50 bg-primary">
-    </section>     -->
+      
 </body>

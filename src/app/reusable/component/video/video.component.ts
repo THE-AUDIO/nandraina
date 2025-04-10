@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, Renderer2, ViewChild } from '@angular/core';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -11,21 +11,28 @@ gsap.registerPlugin(ScrollTrigger);
   styleUrl: './video.component.scss'
 })
 export class VideoComponent implements AfterViewInit{
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private renderer: Renderer2
+  ) {}
   @ViewChild('video') video!: ElementRef
-  @ViewChild('image') image!: ElementRef
+  @ViewChild('contact') contact!: ElementRef
   @ViewChild('play') play!: ElementRef
   @ViewChild('barre') barre!: ElementRef
-  @ViewChild('angular') angular!: ElementRef
-  @ViewChild('spring') spring!: ElementRef
+  // @ViewChild('angular') angular!: ElementRef
+  @ViewChild('contactTitle') contactTitle!: ElementRef
   @ViewChild('tech') techBtn!: ElementRef
   ngAfterViewInit(): void {
-    
     if (isPlatformBrowser(this.platformId)) {
+      // scroll horizontale element
+      let container = document.querySelector('.tech-container')
+      let sections = document.querySelectorAll('.tech-section')
+      const width = 100 * sections.length + 'vw';
+      this.renderer.setStyle(container, "width", width)
+      
+
       gsap.to(this.video.nativeElement, {
-        width: "100%",
         height: "100%",
-        borderRadius: "0%",
         opacity:1,
         duration: 2,
         scrollTrigger:{
@@ -49,15 +56,7 @@ export class VideoComponent implements AfterViewInit{
         }
       });
       
-      gsap.to(this.image.nativeElement, {
-        clipPath: "polygon(50% 0%, 100% 0%, 100% 100%, 0 100%, 0% 0%)", // rectangle complet
-      scrollTrigger: {
-        trigger: this.image.nativeElement,
-        start: 'top 80%',
-        end: 'top 20%',
-        scrub: 1,
-      }
-      })
+     
       
       gsap.to(this.barre.nativeElement, {
         opacity:1,
@@ -70,34 +69,9 @@ export class VideoComponent implements AfterViewInit{
           scrub:1,
         }
       });
-
-      gsap.to(this.angular.nativeElement, {
-        opacity:0,
-        duration: 3,
-        x:"200%",
-        scale:1.5,
-        scrollTrigger:{
-          trigger: '.angular',
-          start: "top 20%",
-          end: "bottom center",
-          scrub:1,
-        }
-      });
-      gsap.to(this.spring.nativeElement, {
-        opacity:0,
-        duration: 3,
-        x:"200%",
-        scale:1.5,
-        scrollTrigger:{
-          trigger: '.spring',
-          start: "top 100%",
-          end: "bottom center",
-          scrub:1,
-        }
-      });
       gsap.to(this.techBtn.nativeElement, {
         duration: .5,
-        backgroundColor:"#1A1A40",
+        backgroundColor:"#171719",
         scrollTrigger:{
           trigger: '.angular',
           start: "top 100%",
@@ -105,6 +79,42 @@ export class VideoComponent implements AfterViewInit{
           scrub:1,
         }
       });
+   
+      
+      gsap.to(sections, {
+        xPercent: -100*(sections.length - 1),
+        ease:"none",
+        scrollTrigger:{
+          trigger: container,
+          pin:true,
+          scrub:1,
+          end:"+=3500",
+        }
+      });
+
+      gsap.to(this.contact.nativeElement, {
+        clipPath: "polygon(50% 0%, 100% 0%, 100% 100%, 0 100%, 0% 0%)", // rectangle complet
+        duration:2,
+      scrollTrigger: {
+        trigger: '.section_hidden',
+        start: 'top 80%',
+        end: 'top 20%',
+        scrub: 1,
+      }
+      });
+
+      gsap.to(this.contactTitle.nativeElement, {
+        y:"-50px",
+        duration:2,
+      scrollTrigger: {
+        trigger: this.contactTitle.nativeElement,
+        start: 'top center',
+        end: 'top 40%',
+        scrub: 1,
+      }
+      });
+
+
     }
   }
 
