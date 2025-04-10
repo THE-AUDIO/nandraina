@@ -1,0 +1,89 @@
+
+<body class="w-full h-[200dvh] bg-primary relative"> 
+    <!-- <span class="absolute h-2 w-full bg-secondary batton"></span>
+    <span class="absolute h-2 w-full bg-secondary batton"></span>
+    <span class="absolute h-2 w-full bg-secondary batton"></span> -->
+    <!-- section du video -->
+    <section class="container_video w-full h-screen flex justify-center items-center relative bg-primary">
+            <div #video class=" shadow-sm w-20 h-16 rounded-xl flex justify-center items-center fixed z-10 overflow-hidden p-0 m-0">
+               <div class="relative w-full h-full flex justify-center items-center overflow-hidden">
+                    <span #play class="w-20 h-16 z-10 flex justify-center items-center bg-secondary opacity-100 rounded-xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46"  class="bi bi-play-fill fill-primary play" viewBox="0 0 16 16">
+                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                        </svg> 
+                    </span>
+                    <video src="assets/video/video1.mp4" autoplay="true" loop muted="true" class="absolute z-0 w-full h-full object-cover"></video> 
+               </div>
+            </div> 
+
+            <div #barre class="barre bg-secondary h-[6vh] w-1/3 rounded-2xl fixed top-2 z-50">
+                    <ul class="flex justify-between items-center w-full h-full px-4 text-tertiary">
+                        <li>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-house-fill fill-tertiary" viewBox="0 0 16 16">
+                                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+                                </svg>
+                            </span> 
+                            <span class="text-lg font-bold ml-2">Homme</span>
+                        </li>
+                        <li #tech>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-gear fill-tertiary" viewBox="0 0 16 16">
+                                    <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
+                                    <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
+                                </svg>
+                            </span> 
+                            <span class="text-lg font-bold ml-2">Techologie</span>
+                        </li>
+                        <li>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-person-lines-fill fill-tertiary" viewBox="0 0 16 16">
+                                    <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/>
+                                </svg>
+                            </span> 
+                            <span class="text-lg font-bold ml-2">Contact</span>
+                        </li>
+
+                      
+                    </ul>
+            </div>
+            <div class="presatation flex justify-center items-center flex-col h-full w-full relative">
+                  <div class="h-max ">
+                    <h1 class="text-[5rem] font-bold text-gray-50 major">The Audio Nandraina</h1>
+                  </div>
+                  <div class="h-2/3 w-full rounded-2xl overflow-hidden flex justify-around items-center z-0 p-4 mt-8">
+                        <div class="w-[45%] h-5/6 text-gray-50 flex justify-between items-start flex-col major">
+                            <h2 class="text-4xl"> DEVELOPPEUR ANGULAR/SPRING-BOOT </h2>
+                            <p class="text-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim animi quos, quibusdam facilis ea aspernatur molestias ullam doloremque aliquam, impedit autem eos quae accusamus ab, cum minima expedita? Quibusdam laudantium ipsum impedit error sed! Vel enim, commodi nemo dicta tempora quos animi odit, quis mollitia officiis ducimus repudiandae doloribus. Perferendis placeat iste accusantium earum illo? Illo labore necessitatibus, dignissimos atque iure mollitia eveniet debitis voluptate facere sint ipsa corrupti blanditiis in numquam iusto. Inventore, nam impedit ipsa voluptate odit perferendis!</p>
+                            <button class="bg-secondary text-primary font-bold h-[5vh] w-1/2  rounded-xl text-xl">Telecharger mon cv</button>
+                        </div>
+                        <div class="w-[45%] h-5/6 shadow-sm rounded-xl overflow-hidden">
+                            <img src="assets/image/bg.jpeg" class="w-full h-full object-cover" alt="une femme dans un voiture vert">
+                        </div>
+                  </div>
+            </div>
+    </section>
+    <!-- element à defiler pour l'animation du video -->
+    <div class="w-full h-[50vh] section2">
+    </div>
+    <div class="w-full h-screen section3">
+    </div>
+    <section class="angular h-screen w-full relative z-50 flex justify-center items-center">
+        <div class="h-1/2 w-full flex justify-center items-center overflow-hidden">
+             <img #angular class="w-5/6 h-[30rem] fixed  top-1/4 opacity-100 -translate-x-[120%]" src="assets/image/angular_wordmark_gradient.png" alt="angular_wordmark_gradient">
+        </div>
+    </section> 
+    <section class="spring h-screen w-full relative z-50 flex justify-center items-center">
+        <div class="h-1/2 w-full flex justify-center items-center overflow-hidden">
+             <img #spring class="w-5/6 h-[30rem] fixed  top-1/4 opacity-100 -translate-x-[120%]" src="assets/image/angular_wordmark_gradient.png" alt="angular_wordmark_gradient">
+        </div>
+    </section>
+    <!-- element à defiler pour l'animation du video -->
+    <section #image class="section_hidden w-full h-screen z-50 bg-primary relative flex justify-center items-center">
+         
+        <h2 #contact class="text-[10rem] font-bold text-secondary text-center major"> Mes contactes </h2>
+    </section>
+    <!-- <section class="h-screen w-full relative z-50 bg-primary">
+    </section>     -->
+</body>

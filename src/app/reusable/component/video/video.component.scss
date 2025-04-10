@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$primary:#1A1A40;
+$secondary:#f46609;
+$tertiary:#f9fafb;
+
+.major {
+    font-family: "Major Mono Display", monospace;
+    font-style: normal;
+  }
+  .poppins {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+  }
+.container_video{
+    z-index: 1 !important;
+}
+.section_hidden{
+    clip-path: polygon(50% 0%, 100% 38%, 100% 100%, 0 100%, 0% 38%);
+}
+li{
+    font-family: "Major Mono Display", monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    width: 30%;
+    border-radius: 1rem;
+    cursor: pointer;
+    &:hover{
+        transition: 250ms ease;
+        background-color: $primary;
+    }
+}
+.batton{
+    display: unset;
+    z-index: 100 !important;
+}
+.batton:nth-child(1){
+    left: 0 !important;
+   transform: rotate(45deg);
+}
+.batton:nth-child(2){
+    left: 20% !important;
+   transform: rotate(45deg);
+}
+.batton:nth-child(3){
+    left: -20% !important;
+   transform: rotate(45deg);
+}
