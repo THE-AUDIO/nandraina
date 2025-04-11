@@ -17,7 +17,7 @@ export class VideoComponent implements AfterViewInit{
     private renderer: Renderer2
   ) {}
   @ViewChild('video') video!: ElementRef;
-  @ViewChild('contact') contact!: ElementRef;
+  @ViewChild('chifre') chifre!: ElementRef;
   @ViewChild('play') play!: ElementRef;
   @ViewChild('barre') barre!: ElementRef;
   @ViewChild('projet1') projet1!: ElementRef;
@@ -27,10 +27,19 @@ export class VideoComponent implements AfterViewInit{
   @ViewChild('tech') techBtn!: ElementRef;
   @ViewChild('angular') angular!: ElementRef;
   @ViewChild('spring') spring!: ElementRef;
-  @ViewChild('commits') commits!: ElementRef;
-  @ViewChild('pullRequest') pullRequest!: ElementRef;
 
-  animProjetNumber(card:ElementRef, container:any){
+  @ViewChild('site2') site2!: ElementRef;
+  @ViewChild('titre2') titre2!: ElementRef;
+  @ViewChild('site3') site3!: ElementRef;
+  @ViewChild('titre3') titre3!: ElementRef;
+
+  @ViewChild('repository') repository!: ElementRef;
+  @ViewChild('contribution') contribution!: ElementRef;
+  @ViewChild('lSequence') lSequence!: ElementRef;
+
+
+
+  flipFlap(card:ElementRef, container:any){
     gsap.to(card.nativeElement, {
       rotateX:0,
       duration:2,
@@ -67,6 +76,34 @@ export class VideoComponent implements AfterViewInit{
     });
  }
 
+ textCross(upElt: ElementRef, downElt:ElementRef, container:any){
+  gsap.from(upElt.nativeElement, {
+    opacity:0,
+    x:200,
+    duration:2,
+  scrollTrigger: {
+    trigger: upElt.nativeElement,
+    start: 'let 70%',
+    end: 'left 50%',
+    horizontal:true,
+    scrub: 1,
+    containerAnimation:container,
+  }
+  });
+  gsap.from(downElt.nativeElement, {
+    opacity:0,
+    x:-200,
+    duration:2,
+  scrollTrigger: {
+    trigger: downElt.nativeElement,
+    start: 'left 70%',
+    end: 'left 50%',
+    horizontal:true,
+    containerAnimation:container,
+    scrub: 1,
+  }
+  });
+ }
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       // scroll horizontale element
@@ -138,7 +175,7 @@ export class VideoComponent implements AfterViewInit{
         }
       });
 
-      gsap.to(this.contact.nativeElement, {
+      gsap.to(this.chifre.nativeElement, {
         clipPath: "polygon(50% 0%, 100% 0%, 100% 100%, 0 100%, 0% 0%)", // rectangle complet
         duration:2,
       scrollTrigger: {
@@ -171,7 +208,6 @@ export class VideoComponent implements AfterViewInit{
       });
       gsap.from(this.angular.nativeElement, {
         opacity:0,
-        width:"0",
         x:200,
         duration:2,
       scrollTrigger: {
@@ -183,7 +219,6 @@ export class VideoComponent implements AfterViewInit{
       });
       gsap.from(this.spring.nativeElement, {
         opacity:0,
-        width:0,
         x:-200,
         duration:2,
       scrollTrigger: {
@@ -194,10 +229,13 @@ export class VideoComponent implements AfterViewInit{
       }
       });
      
-      this.animProjetNumber(this.projet2,horizontalTween)
-      this.animProjetNumber(this.projet3,horizontalTween)
-      this.Counter(this.commits, 125)
-      this.Counter(this.pullRequest, 34)
+      this.flipFlap(this.projet2,horizontalTween)
+      this.flipFlap(this.projet3,horizontalTween)
+      this.textCross(this.site2, this.titre2, horizontalTween)
+      this.textCross(this.site3, this.titre3, horizontalTween)
+      this.Counter(this.repository, 54)
+      this.Counter(this.contribution, 1099)
+      this.Counter(this.lSequence, 24)
 
     }
   }
