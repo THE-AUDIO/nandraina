@@ -1,5 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, Renderer2, ViewChild } from '@angular/core';
+import { count } from 'console';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -15,15 +16,20 @@ export class VideoComponent implements AfterViewInit{
     @Inject(PLATFORM_ID) private platformId: Object,
     private renderer: Renderer2
   ) {}
-  @ViewChild('video') video!: ElementRef
-  @ViewChild('contact') contact!: ElementRef
-  @ViewChild('play') play!: ElementRef
-  @ViewChild('barre') barre!: ElementRef
-  @ViewChild('projet1') projet1!: ElementRef
-  @ViewChild('projet2') projet2!: ElementRef
-  @ViewChild('projet3') projet3!: ElementRef
-  @ViewChild('contactTitle') contactTitle!: ElementRef
-  @ViewChild('tech') techBtn!: ElementRef
+  @ViewChild('video') video!: ElementRef;
+  @ViewChild('contact') contact!: ElementRef;
+  @ViewChild('play') play!: ElementRef;
+  @ViewChild('barre') barre!: ElementRef;
+  @ViewChild('projet1') projet1!: ElementRef;
+  @ViewChild('projet2') projet2!: ElementRef;
+  @ViewChild('projet3') projet3!: ElementRef;
+  @ViewChild('contactTitle') contactTitle!: ElementRef;
+  @ViewChild('tech') techBtn!: ElementRef;
+  @ViewChild('angular') angular!: ElementRef;
+  @ViewChild('spring') spring!: ElementRef;
+  @ViewChild('commits') commits!: ElementRef;
+  @ViewChild('pullRequest') pullRequest!: ElementRef;
+
   animProjetNumber(card:ElementRef, container:any){
     gsap.to(card.nativeElement, {
       rotateX:0,
@@ -31,14 +37,36 @@ export class VideoComponent implements AfterViewInit{
     scrollTrigger: {
       id:"pro",
       trigger: card.nativeElement,
-      start: 'left 60%',
-      end: 'left 40%',
+      start: 'left 70%',
+      end: 'left 50%',
       scrub: 1,
       horizontal:true,
       containerAnimation:container
     }
     });
   }
+ Counter(counter: ElementRef, targetNumber:number){
+  let obj = { val: 0 }; // objet intermédiaire pour animer le nombre
+  gsap.fromTo(obj, 
+    { val: 0 }, 
+    {
+      val: targetNumber,
+      duration: 3,
+      ease: 'power1.out',
+      scrollTrigger: {
+        trigger: counter.nativeElement,
+        start: 'top 80%',
+        end: 'top 60%',
+        scrub: false,
+        once: true,
+      },
+      onUpdate: () => {
+        // met à jour le texte du compteur
+        counter.nativeElement.innerText = Math.floor(obj.val);
+      }
+    });
+ }
+
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       // scroll horizontale element
@@ -141,9 +169,35 @@ export class VideoComponent implements AfterViewInit{
         scrub: 1,
       }
       });
+      gsap.from(this.angular.nativeElement, {
+        opacity:0,
+        width:"0",
+        x:200,
+        duration:2,
+      scrollTrigger: {
+        trigger: this.angular.nativeElement,
+        start: 'top 80%',
+        end: 'top 60%',
+        scrub: 1,
+      }
+      });
+      gsap.from(this.spring.nativeElement, {
+        opacity:0,
+        width:0,
+        x:-200,
+        duration:2,
+      scrollTrigger: {
+        trigger: this.angular.nativeElement,
+        start: 'top 80%',
+        end: 'top 60%',
+        scrub: 1,
+      }
+      });
      
       this.animProjetNumber(this.projet2,horizontalTween)
       this.animProjetNumber(this.projet3,horizontalTween)
+      this.Counter(this.commits, 125)
+      this.Counter(this.pullRequest, 34)
 
     }
   }

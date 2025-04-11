@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ReusableRoutingModule } from './reusable-routing.module';
 import { VideoComponent } from './component/video/video.component';
-
+import { NgOptimizedImage } from '@angular/common'
 
 @NgModule({
   declarations: [
@@ -11,7 +11,8 @@ import { VideoComponent } from './component/video/video.component';
   ],
   imports: [
     CommonModule,
-    ReusableRoutingModule
+    ReusableRoutingModule,
+    NgOptimizedImage
   ]
 })
 export class ReusableModule { }

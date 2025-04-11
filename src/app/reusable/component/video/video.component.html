@@ -57,7 +57,7 @@
                             <p class="text-lg">
                                 Développeur web passionné, je me décris comme un éternel apprenant en quête de défis et d'innovation. Curieux et créatif, j'explore le web moderne avec enthousiasme.
 
-                                Mon objectif ? Créer des expériences numériques uniques, accessibles et percutantes.
+                                Mon objectif ? Créer des expériences numériques uniques, accessibles et percutantes. <br>
                                 
                                 🎯 Aujourd'hui, je me perfectionne dans les animations web et l’intégration soignée.                                
                                 Si vous cherchez un esprit créatif, autonome, et toujours prêt à apprendre, parlons-en !
@@ -77,23 +77,48 @@
     </div>
 
     <div class="tech-container relative z-50 major font-bold">
-        <section  class="tech-section angular relative  flex justify-center items-center flex-col">
-                <div class="h-2/3 w-5/6 bg-tertiary text-primary flex justify-center items-center rounded-lg relative">
-                    <div #projet1 class="projet w-40 h-40 absolute top-4 left-4 shadow-xl shadow-primary rounded-lg flex justify-center items-center">
+        <section  class="tech-section ikkaly relative  flex justify-around items-center flex-col">
+                <div class="h-2/3 w-5/6 bg-tertiary text-primary flex justify-between p-6 items-center rounded-lg relative overflow-hidden">
+                    <div #projet1 class="projet w-40 h-40 absolute top-6 left-6 shadow-xl shadow-primary rounded-lg flex justify-center items-center">
                         <h2 class="text-[6rem]">
                             01
                         </h2>
                     </div>
+                    <div class="h-5/6 w-[40%] flex justify-center items-end">
+                        <div class="h-2/3 w-full flex justify-around items-start flex-col">
+                             <h3  class="text-[2rem] text-primary font-bold w-max p-2 underline">Framework</h3>
+                            <div class="flex justify-start items-start flex-col h-max mt-4">
+                                <h3 #angular class="text-[2rem] bg-primary text-tertiary p-2 w-max opacity-100">Angular</h3>
+                                <h3 #tailwind class="text-[2rem] bg-primary text-tertiary w-max p-2 opacity-100 ml-20 mt-4">TailwindCss</h3>
+                                <h3 #spring class="text-[2rem] bg-primary text-tertiary w-max p-2 ml-40 mt-4 opacity-100">spring_Boot</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-full w-[60%] relative rounded-lg overflow-hidden">
+                            <img  ngSrc="assets/image/ikkaly-project.png" fill alt="ikkaly-project" class="grayscale opacity-80">
+                    </div>  
                 </div>
         </section> 
     
         <!-- spring boot  -->
-        <section  class="tech-section spring relative z-50 flex justify-center items-center">
-            <div class="h-2/3 w-5/6 bg-tertiary text-primary flex justify-center items-center rounded-lg relative">
-                <div #projet2 class="projet w-40 h-40 absolute top-4 left-4 shadow-xl shadow-primary rounded-lg flex justify-center items-center">
+        <section  class="tech-section spring z-50 flex justify-center items-center relative">
+            <div class="h-2/3 w-5/6 bg-tertiary text-primary flex justify-between p-6 items-center rounded-lg relative overflow-hidden">
+                <div #projet2 class="projet w-40 h-40 absolute top-6 left-6 shadow-xl shadow-primary rounded-lg flex justify-center items-center z-10">
                     <h2 class="text-[6rem]">
                         02
                     </h2>
+                </div>
+                <div class="h-5/6 w-[40%] flex justify-center items-end">
+                    <div class="h-2/3 w-full flex justify-around items-start flex-col">
+                         <h3  class="text-[2rem] text-primary font-bold w-max p-2 underline">Avec Labasia</h3>
+                        <div class="flex justify-start items-start flex-col h-max mt-4">
+                            <h3  class="text-[2rem] bg-primary text-tertiary p-2 w-max opacity-100">+ <span #commits>0</span> commits</h3>
+                            <h3 class="text-[2rem] bg-primary text-tertiary w-max p-2 opacity-100 ml-20 mt-4">+ <span #pullRequest>0</span> Pull request</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-full w-[60%] relative rounded-lg overflow-hidden">
+                        <img  ngSrc="assets/image/labasia-project.png" fill alt="ikkaly-project" class="grayscale opacity-80">
                 </div>
             </div>
         </section>
@@ -105,6 +130,7 @@
                         03
                     </h2>
                 </div>
+                
             </div>
         </section>
     </div>
