@@ -228,6 +228,21 @@ export class VideoComponent implements AfterViewInit{
         scrub: 1,
       }
       });
+      gsap.utils.toArray<HTMLElement>('.photo').forEach((img) => {
+        gsap.to(img,{
+            rotateY:0,
+            filter: 'grayscale(0%)',
+            scrollTrigger: {
+              trigger: img,
+              start: 'top 40%',
+              end:'top 20%',
+              toggleActions: 'play none none reverse',
+            },
+            duration: 1,
+            ease: 'power2.out'
+          });
+      });
+    
      
       this.flipFlap(this.projet2,horizontalTween)
       this.flipFlap(this.projet3,horizontalTween)
