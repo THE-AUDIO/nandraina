@@ -1,6 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, Renderer2, ViewChild } from '@angular/core';
-import { count } from 'console';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -19,13 +18,13 @@ export class VideoComponent implements AfterViewInit{
   @ViewChild('video') video!: ElementRef;
   @ViewChild('chifre') chifre!: ElementRef;
   @ViewChild('play') play!: ElementRef;
-  @ViewChild('barre') barre!: ElementRef;
+  // @ViewChild('barre') barre!: ElementRef;
   @ViewChild('projet1') projet1!: ElementRef;
   @ViewChild('projet2') projet2!: ElementRef;
   @ViewChild('projet3') projet3!: ElementRef;
   @ViewChild('projet4') projet4!: ElementRef;
   @ViewChild('contactTitle') contactTitle!: ElementRef;
-  @ViewChild('tech') techBtn!: ElementRef;
+  // @ViewChild('tech') techBtn!: ElementRef;
   @ViewChild('angular') angular!: ElementRef;
   @ViewChild('spring') spring!: ElementRef;
 
@@ -146,27 +145,27 @@ export class VideoComponent implements AfterViewInit{
       
      
       
-      gsap.to(this.barre.nativeElement, {
-        opacity:1,
-        duration: 2,
-        top:"90%",
-        scrollTrigger:{
-          trigger: '.section2',
-          start: "top 100%",
-          end: "bottom center",
-          scrub:1,
-        }
-      });
-      gsap.to(this.techBtn.nativeElement, {
-        duration: .5,
-        backgroundColor:"#171719",
-        scrollTrigger:{
-          trigger: '.angular',
-          start: "top 100%",
-          end: "bottom center",
-          scrub:1,
-        }
-      });
+      // gsap.to(this.barre.nativeElement, {
+      //   opacity:1,
+      //   duration: 2,
+      //   top:"90%",
+      //   scrollTrigger:{
+      //     trigger: '.section2',
+      //     start: "top 100%",
+      //     end: "bottom center",
+      //     scrub:1,
+      //   }
+      // });
+      // gsap.to(this.techBtn.nativeElement, {
+      //   duration: .5,
+      //   backgroundColor:"#171719",
+      //   scrollTrigger:{
+      //     trigger: '.angular',
+      //     start: "top 100%",
+      //     end: "bottom center",
+      //     scrub:1,
+      //   }
+      // });
    
       
  const horizontalTween  =  gsap.to(sections, {
@@ -240,8 +239,8 @@ export class VideoComponent implements AfterViewInit{
             filter: 'grayscale(0%)',
             scrollTrigger: {
               trigger: img,
-              start: 'top 40%',
-              end:'top 30%',
+              start: 'top 50%',
+              end:'top 40%',
               toggleActions: 'play none none reverse',
             },
             duration: 1,

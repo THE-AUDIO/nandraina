@@ -37,6 +37,10 @@ li{
     &:hover{
         transition: 250ms ease;
         background-color: $primary;
+        color: $tertiary;
+        svg{
+          fill: $tertiary;
+        }
     }
 }
 .tech-container {
