@@ -23,6 +23,7 @@ export class VideoComponent implements AfterViewInit{
   @ViewChild('projet1') projet1!: ElementRef;
   @ViewChild('projet2') projet2!: ElementRef;
   @ViewChild('projet3') projet3!: ElementRef;
+  @ViewChild('projet4') projet4!: ElementRef;
   @ViewChild('contactTitle') contactTitle!: ElementRef;
   @ViewChild('tech') techBtn!: ElementRef;
   @ViewChild('angular') angular!: ElementRef;
@@ -30,8 +31,13 @@ export class VideoComponent implements AfterViewInit{
 
   @ViewChild('site2') site2!: ElementRef;
   @ViewChild('titre2') titre2!: ElementRef;
+
   @ViewChild('site3') site3!: ElementRef;
   @ViewChild('titre3') titre3!: ElementRef;
+
+  @ViewChild('site4') site4!: ElementRef;
+  @ViewChild('titre4') titre4!: ElementRef;
+
 
   @ViewChild('repository') repository!: ElementRef;
   @ViewChild('contribution') contribution!: ElementRef;
@@ -235,7 +241,7 @@ export class VideoComponent implements AfterViewInit{
             scrollTrigger: {
               trigger: img,
               start: 'top 40%',
-              end:'top 20%',
+              end:'top 30%',
               toggleActions: 'play none none reverse',
             },
             duration: 1,
@@ -246,8 +252,10 @@ export class VideoComponent implements AfterViewInit{
      
       this.flipFlap(this.projet2,horizontalTween)
       this.flipFlap(this.projet3,horizontalTween)
+      this.flipFlap(this.projet4,horizontalTween)
       this.textCross(this.site2, this.titre2, horizontalTween)
       this.textCross(this.site3, this.titre3, horizontalTween)
+      this.textCross(this.site4, this.titre4, horizontalTween)
       this.Counter(this.repository, 54)
       this.Counter(this.contribution, 1099)
       this.Counter(this.lSequence, 24)
