@@ -18,7 +18,6 @@ export class VideoComponent implements AfterViewInit{
   @ViewChild('video') video!: ElementRef;
   @ViewChild('chifre') chifre!: ElementRef;
   @ViewChild('play') play!: ElementRef;
-  // @ViewChild('barre') barre!: ElementRef;
   @ViewChild('projet1') projet1!: ElementRef;
   @ViewChild('projet2') projet2!: ElementRef;
   @ViewChild('projet3') projet3!: ElementRef;
@@ -142,20 +141,7 @@ export class VideoComponent implements AfterViewInit{
           end: "bottom center",
         }
       });
-      
-     
-      
-      // gsap.to(this.barre.nativeElement, {
-      //   opacity:1,
-      //   duration: 2,
-      //   top:"90%",
-      //   scrollTrigger:{
-      //     trigger: '.section2',
-      //     start: "top 100%",
-      //     end: "bottom center",
-      //     scrub:1,
-      //   }
-      // });
+
       // gsap.to(this.techBtn.nativeElement, {
       //   duration: .5,
       //   backgroundColor:"#171719",
@@ -239,8 +225,8 @@ export class VideoComponent implements AfterViewInit{
             filter: 'grayscale(0%)',
             scrollTrigger: {
               trigger: img,
-              start: 'top 50%',
-              end:'top 40%',
+              start: 'top 60%',
+              end:'top 50%',
               toggleActions: 'play none none reverse',
             },
             duration: 1,
