@@ -3,7 +3,8 @@ import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, Renderer2, ViewChild } from '@angular/core';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 
 @Component({
@@ -26,7 +27,7 @@ export class AppComponent implements AfterViewInit{
   @ViewChild('projet2') projet2!: ElementRef;
   @ViewChild('projet3') projet3!: ElementRef;
   @ViewChild('projet4') projet4!: ElementRef;
-  @ViewChild('contactTitle') contactTitle!: ElementRef;
+  // @ViewChild('contactTitle') contactTitle!: ElementRef;
   // @ViewChild('tech') techBtn!: ElementRef;
   @ViewChild('angular') angular!: ElementRef;
   @ViewChild('spring') spring!: ElementRef;
@@ -44,6 +45,8 @@ export class AppComponent implements AfterViewInit{
   @ViewChild('repository') repository!: ElementRef;
   @ViewChild('contribution') contribution!: ElementRef;
   @ViewChild('lSequence') lSequence!: ElementRef;
+  @ViewChild('wrapper') wrapper!: ElementRef;
+  @ViewChild('content') content!: ElementRef;
 
 
 
@@ -68,7 +71,7 @@ export class AppComponent implements AfterViewInit{
     { val: 0 }, 
     {
       val: targetNumber,
-      duration: 3,
+      duration: 1,
       ease: 'power1.out',
       scrollTrigger: {
         trigger: counter.nativeElement,
@@ -84,6 +87,13 @@ export class AppComponent implements AfterViewInit{
     });
  }
 
+goTo(classe:any){
+  let smoother = ScrollSmoother.create({
+    smooth:2
+  })
+  smoother.scrollTo(classe, true, "center center")
+}
+ 
  textCross(upElt: ElementRef, downElt:ElementRef, container:any){
   gsap.from(upElt.nativeElement, {
     opacity:0,
@@ -113,6 +123,7 @@ export class AppComponent implements AfterViewInit{
   });
  }
   ngAfterViewInit(): void {
+    
     if (isPlatformBrowser(this.platformId)) {
       // scroll horizontale element
       var container = document.querySelector('.tech-container')
@@ -120,7 +131,7 @@ export class AppComponent implements AfterViewInit{
       const width = 100 * sections.length + 'vw';
       this.renderer.setStyle(container, "width", width)
       
-
+      
       gsap.to(this.video.nativeElement, {
         height: "100%",
         opacity:1,
@@ -145,17 +156,6 @@ export class AppComponent implements AfterViewInit{
           end: "bottom center",
         }
       });
-
-      // gsap.to(this.techBtn.nativeElement, {
-      //   duration: .5,
-      //   backgroundColor:"#171719",
-      //   scrollTrigger:{
-      //     trigger: '.angular',
-      //     start: "top 100%",
-      //     end: "bottom center",
-      //     scrub:1,
-      //   }
-      // });
    
       
  const horizontalTween  =  gsap.to(sections, {
@@ -181,16 +181,16 @@ export class AppComponent implements AfterViewInit{
       }
       });
 
-      gsap.to(this.contactTitle.nativeElement, {
-        y:"-50px",
-        duration:2,
-      scrollTrigger: {
-        trigger: this.contactTitle.nativeElement,
-        start: 'top center',
-        end: 'top 40%',
-        scrub: 1,
-      }
-      });
+      // gsap.to(this.contactTitle.nativeElement, {
+      //   y:"-50px",
+      //   duration:2,
+      // scrollTrigger: {
+      //   trigger: this.contactTitle.nativeElement,
+      //   start: 'top center',
+      //   end: 'top 40%',
+      //   scrub: 1,
+      // }
+      // });
       gsap.to(this.projet1.nativeElement, {
         rotateX:0,
         duration:2,
@@ -237,8 +237,7 @@ export class AppComponent implements AfterViewInit{
             ease: 'power2.out'
           });
       });
-    
-     
+      
       this.flipFlap(this.projet2,horizontalTween)
       this.flipFlap(this.projet3,horizontalTween)
       this.flipFlap(this.projet4,horizontalTween)
@@ -250,5 +249,6 @@ export class AppComponent implements AfterViewInit{
       this.Counter(this.lSequence, 24)
 
     }
+
   }
 }
